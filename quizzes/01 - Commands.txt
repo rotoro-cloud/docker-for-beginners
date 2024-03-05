@@ -1,0 +1,11 @@
+Q:
+Как удалить все запущенные и остановленные контейнеры на хосте? (Выбери 3)
+
+A:
+docker container stop $(docker container ls -q)    -
+docker container rm $(docker container ls -q)      -
+docker container stop $(docker container ps -q)    -
+docker container rm -f $(docker container ls -aq)
+docker container rm -f $(docker container ps -aq)
+docker rm -f $(docker ps -aq)
+-----
